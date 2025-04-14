@@ -1,6 +1,7 @@
 # cybersecurinfo
 ## Description du Projet
 CyberSécurInfo est un site web éducatif dédié à la sensibilisation à la cybersécurité. Il fournit des informations sur les bonnes pratiques en matière de sécurité en ligne, les risques associés à l'utilisation d'Internet, et des tests interactifs pour évaluer les connaissances des utilisateurs.
+Il est disponible à l'addresse https://cybersecurinfo.pmbard.eu/
 
 ## Fonctionnalités
 - **Bonnes Pratiques en Cybersécurité** : Une section dédiée aux conseils sur l'utilisation de mots de passe, l'authentification à deux facteurs, les mises à jour logicielles, la confiance en ligne, les sauvegardes, et la prudence sur les réseaux sociaux.
@@ -49,7 +50,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, 
 5. Ouvrez une Pull Request.
 
 ## Auteurs
-- [Votre Nom](https://github.com/votre-utilisateur) - Développeur principal
+- [PenguinRoot](https://github.com/penguinroot) - Développeur principal
 
 ## License
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
