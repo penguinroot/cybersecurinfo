@@ -1,0 +1,150 @@
+:root {
+    --primary-color: #002B5B;
+    --secondary-color: #00BFFF;
+    --text-color: #333;
+    --white: rgba(255, 255, 255, 0.8);
+    --font-family: 'Megatrans', sans-serif;
+    --base-font-size: 1em;
+    --header-background: linear-gradient(135deg, #8B0000, #B22222, #FF4500);
+    --footer-background: #A80000;
+}
+/* Police personnalisée */
+@font-face {
+    font-family: "Megatrans";
+    src: url("./Fonts/Octosquares.ttf") format("truetype");
+}
+/* Style global */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('./Image/fonds.jpg');
+    color: var(--text-color);
+    font-size: var(--base-font-size);
+    padding-bottom: 4em; /* Espacement pour le footer */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    background: var(--header-background);
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1 {
+    font-size: 3vw;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Image fixe */
+.fixed-image {
+    position: fixed;
+    top: 26%    ; /* Ajustement pour éviter le header */
+    left: 10%;
+    height: 50vh; /* Empêcher le débordement entre header et footer */
+    overflow: hidden; /* Couper l'image si nécessaire */
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.5em;
+}
+
+.fixed-image img {
+    width: auto;
+    height: 100%;
+    border-radius: 0.5em;
+    border: 0.125em solid #ddd;
+    object-fit: contain
+}
+.fixed-image:hover {
+    transform: scale(2); /* Agrandit le conteneur et le GIF */
+    transition: transform 0.3s ease; /* Animation fluide pour l'agrandissement */
+}
+
+/* Texte défilant */
+main {
+    margin-left: 45%; /* Laisser de la place pour l'image fixe */
+    padding: 20px;
+}
+
+.text {
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+}
+
+.text h2 {
+    color: var(--footer-background);
+    font-size: 2em;
+    margin-bottom: 0.625em;
+}
+
+.text ul {
+    list-style-type: disc;
+    padding-left: 1.25em;
+}
+
+.text ul li {
+    margin-bottom: 0.625em;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: var(--footer-background);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .fixed-image {
+        display: none; /* Masquer l'image sur petits écrans */
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .text {
+        padding: 1em;
+    }
+}

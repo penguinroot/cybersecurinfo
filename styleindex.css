@@ -1,0 +1,152 @@
+/* Définition des variables CSS (Custom Properties) */
+:root {
+    --primary-color: #002B5B; /* Couleur principale (bleu foncé) */
+    --secondary-color: #00BFFF; /* Couleur secondaire (bleu clair) */
+    --background-color: #f4f4f4; /* Couleur de fond générale */
+    --text-color: #333; /* Couleur du texte */
+    --white: rgba(255, 255, 255, 0.8); /* Blanc semi-transparent */
+    --font-family: 'Megatrans', sans-serif; /* Police personnalisée */
+}
+
+/* Importation d'une police personnalisée */
+@font-face {
+    font-family: "Megatrans"; /* Nom de la police */
+    src: url("./Fonts/Octosquares.ttf") format("truetype"); /* Chemin et format de la police */
+}
+
+/* Styles généraux pour la page */
+body {
+    font-family: var(--font-family); /* Utilisation de la police définie */
+    margin: 0; /* Suppression des marges par défaut */
+    padding: 0; /* Suppression des espacements par défaut */
+    line-height: 1.6; /* Hauteur de ligne */
+    background-color: var(--background-color); /* Couleur de fond */
+    color: var(--text-color); /* Couleur du texte */
+    background-image: url('./Image/fonds.jpg'); /* Image de fond */
+    background-size: cover; /* Recouvre toute la zone */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Fixe l'image lors du défilement */
+}
+
+/* Styles pour l'entête */
+header {
+    padding: 20px 30px; /* Espacements internes */
+    color: white; /* Couleur du texte */
+    text-align: center; /* Centrer le contenu */
+    background: linear-gradient(135deg, #003366, #1E3A5F, #4F79A1); /* Dégradé de fond */
+    height: 15vh; /* Hauteur de l'entête en fonction de la hauteur de la fenêtre */
+    display: flex; /* Flexbox pour alignement */
+    flex-direction: column; /* Orientation verticale */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+}
+
+h1 {
+    font-size: 4vw; /* Taille proportionnelle à la largeur de la fenêtre */
+    margin: 0; /* Suppression des marges */
+}
+
+/* Barre de navigation */
+nav {
+    width: 100%; /* Prend toute la largeur */
+}
+
+nav ul {
+    display: flex; /* Affichage en ligne */
+    justify-content: center; /* Centrer les éléments */
+    padding: 0; /* Suppression des espaces internes */
+    margin: 10px 0; /* Marges externes */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacement horizontal entre les éléments */
+}
+
+nav ul li a {
+    color: white; /* Couleur des liens */
+    text-decoration: none; /* Suppression du soulignement */
+    font-weight: bold; /* Texte en gras */
+    font-size: 1.8rem; /* Taille des liens */
+    transition: color 0.3s ease; /* Animation douce pour les changements de couleur */
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color); /* Changement de couleur au survol */
+}
+
+/* Structure des sections */
+#intro {
+    display: flex; /* Disposition en ligne */
+    align-items: flex-start; /* Aligner les éléments au début */
+}
+
+.content {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Orientation verticale */
+    margin-right: 20px; /* Espacement à droite */
+    flex: 1; /* Prend tout l'espace disponible */
+}
+
+/* Contenu du texte */
+.text {
+    flex: 1; /* Prend tout l'espace disponible */
+    margin: 10px; /* Marges externes */
+    background-color: var(--white); /* Fond blanc semi-transparent */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre discrète */
+}
+
+/* Texte à l'intérieur */
+.texte {
+    font-size: 1.9rem; /* Taille de police */
+    margin-left: 1%; /* Espacement à gauche */
+}
+
+/* Images */
+.image {
+    max-width: 45%; /* Largeur maximale */
+    margin-top: 3%; /* Marge en haut */
+}
+
+.image img {
+    width: 100%; /* L'image occupe toute la largeur */
+    height: auto; /* Ajustement proportionnel */
+    border-radius: 8px; /* Coins arrondis */
+    border: 2px solid #ddd; /* Bordure légère */
+}
+
+/* Listes à puces */
+ul {
+    list-style-type: disc; /* Style des puces (disques) */
+    padding-left: 20px; /* Espacement à gauche */
+}
+
+ul li {
+    margin-bottom: 10px; /* Espacement entre les éléments */
+}
+
+/* Pied de page */
+footer {
+    text-align: center; /* Texte centré */
+    padding: 15px; /* Espacements internes */
+    background: var(--primary-color); /* Fond bleu foncé */
+    color: white; /* Couleur du texte */
+    position: relative; /* Positionnement relatif */
+}
+
+/* Titres */
+h2 {
+    color: var(--primary-color); /* Couleur principale */
+    font-size: 3.8rem; /* Taille de police */
+    margin-bottom: 10px; /* Marge en bas */
+    font-weight: 900; /* Très gras */
+}
+
+/* Styles spécifiques pour certaines pages */
+.index {
+    background: linear-gradient(135deg, var(--primary-color), #005BB5); /* Dégradé */
+}
+
+section .text :not(h2) {
+    font-size: 1.5rem; /* Taille de police pour tout sauf h2 */
+}

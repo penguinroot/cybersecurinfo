@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #002B5B;
+    --secondary-color: #00BFFF;
+    --background-color: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --white: rgba(255, 255, 255, 0.8);
+    --font-family: 'Megatrans', sans-serif;
+}
+
+@font-face {
+    font-family: "Megatrans";
+    src: url("./Fonts/Octosquares.ttf") format("truetype");
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Megatrans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('./Image/fonds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #8FBC8F, lime); /* Dégradé vert */
+    height: 15vh; /* 20% de la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement le contenu */
+    align-items: center; /* Centrer horizontalement */
+}
+h1 {
+    font-size: 4vw; /* Utiliser une unité relative à la largeur de la fenêtre pour maintenir la proportion */
+    margin: 0;
+}
+nav {
+    width: 100%; /* S'assurer que la barre de navigation occupe toute la largeur */
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Boutons */
+.buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Sections */
+.content {
+    display: none; /* Masque toutes les sections au départ */
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.content.active {
+    display: block; /* Affiche uniquement la section active */
+}
+
+h2 {
+    color: green; /* Texte des titres en vert */
+    font-size: 3.8rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    padding: 10px;
+     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+/* Listes */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: limegreen;
+    color: white;
+    position: relative;
+}
+
+footer button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer button:hover {
+    background-color: var(--secondary-color);
+}
+main {
+    flex: 1; /* Permet à la section principale de s'étirer */
+}
+/* Animation pour le message */
+.hidden {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+#hacked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 1000;
+    opacity: 0; /* Masquer initialement */
+    transition: opacity 1.5s ease-in-out; /* Transition douce */
+}
+
+#hacked:not(.hidden) {
+    opacity: 1; /* Transition visible */
+}
+
+.hacked-message h2, .hacked-message p {
+    text-align: center;
+    font-size: 2rem;
+    animation: shake 1s infinite; /* Ajout d'un tremblement pour effet dramatique */
+}
+#hacked-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#hacked-buttons button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hacked-buttons button:hover {
+    background-color: darkred;
+}
+
+/* Animation de tremblement */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

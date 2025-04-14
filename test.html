@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testez-Vous</title>
+    <link rel="stylesheet" href="./styletest.css">
+</head>
+<body>
+
+    <div id="hacked-screen" class="hidden">
+        <div id="hacked-content">
+            <h1>HACKED!</h1>
+            <div id="hacked-buttons">
+                <button id="pay-button">Payer</button>
+                <button id="restart-button">Consulter un professionnel</button>
+            </div>
+            <div id="hacked-message">
+                <p>Donnez-moi 500€ ou je mets vos données en ligne!</p>
+            </div>
+        </div>
+    </div>
+        <div id="payment-modal" class="hidden">
+        <p>Confirmez le paiement ?</p>
+        <button id="confirm-payment">Confirmer</button>
+        <button id="cancel-payment">Annuler</button>
+    </div>
+    <div id="success-message" class="hidden">
+        <h2>Bravo, vous avez réussi le test !</h2>
+    </div>
+    <div id="fail-message" class="hidden">
+        <h2>Ho non, Resayes</h2>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+</html>

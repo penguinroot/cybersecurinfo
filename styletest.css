@@ -1,0 +1,221 @@
+/* Couleurs et animations de base */
+:root {
+    --primary-color: #002B5B;
+    --secondary-color: #00BFFF;
+    --background-color: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --font-family: 'Megatrans', sans-serif;
+    --alert-color: #ff3333; /* Rouge alarmant */
+}
+
+/* Police personnalisée */
+@font-face {
+    font-family: "Megatrans";
+    src: url("./Fonts/Octosquares.ttf") format("truetype");
+}
+
+/* Corps de la page */
+body {
+    font-family: 'Megatrans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('./Image/fonds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #8FBC8F, lime);
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4vw;
+    margin: 0;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Effet d'écran "HACKED!" plein écran */
+#hacked-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0); /* Fond noir transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    z-index: 10000; /* Très au-dessus des autres éléments */
+    animation: shake 0.5s infinite; /* Animation de tremblement */
+}
+
+#hacked-content {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.6); /* Rouge clair, un peu transparent */
+    padding: 30px;
+    border-radius: 15px;
+    animation: flash 0.5s alternate infinite; /* Flash entre des couleurs */
+}
+
+#hacked-buttons button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#hacked-buttons button:hover {
+    background-color: darkred;
+}
+
+#hacked-message {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Animation de flash (écran perturbant) */
+@keyframes flash {
+    0% { background-color: rgba(255, 0, 0, 0.6); }
+    100% { background-color: rgba(255, 255, 255, 0.3); }
+}
+
+/* Animation de tremblement */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Le modal de paiement, caché par défaut */
+#payment-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 10001; /* Au-dessus de l'écran HACKED */
+    text-align: center;
+}
+
+#payment-modal button {
+    margin: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#payment-modal button:hover {
+    background-color: #008c9e;
+}
+
+.hidden {
+    display: none ;
+}
+
+/* Style pour le message de succès */
+#success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 128, 0, 0.8); /* Fond vert pour succès */
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    z-index: 10001; /* Au-dessus de l'écran HACKED */
+    text-align: center;
+    display: none;
+}
+
+/* Affiche le message */
+#success-message:not(.hidden) {
+    display: block;
+}
+/* Style pour le message de succès */
+#fail-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Fond rouge pour erreur */
+    color: white; /* Texte blanc pour contraster avec le fond */
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    z-index: 10001; /* Au-dessus de l'écran HACKED */
+    text-align: center;
+    display: none;
+}
+
+/* Affiche le message */
+#fail-message:not(.hidden) {
+    display: block;
+}
+
